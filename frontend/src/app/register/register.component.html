@@ -1,0 +1,107 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link " href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="login">Log in</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active"  aria-current="page" href="register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="forgottenPassword">Forgotten Password</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+  <body>
+    
+    <form class="row g-3">
+        <div class="col-12">
+            <h1 class="h3 mb-3 fw-normal">Register</h1>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="username" name="username" placeholder="username" [(ngModel)]="username">
+                <label for="username" class="email">Username</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="lozinka" [(ngModel)]="password" name="pass">
+                <label for="floatingPassword" class="lozinka">Password</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="umm" placeholder="lozinka" [(ngModel)]="passwordAgain" name="passAgain">
+                <label for="umm" class="lozinka">Password Verify</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="name" placeholder="name" [(ngModel)]="name" name="name">
+                <label for="name" class="email">Name</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="lastname" placeholder="lastname" [(ngModel)]="lastname" name="lastname">
+                <label for="lastname" class="email">Lastname</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="address" placeholder="address" [(ngModel)]="address" name="address">
+                <label for="address" class="email">Address</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="phone" placeholder="phone" [(ngModel)]="phone" name="phone">
+                <label for="phone" class="email">Phone</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="email" class="form-control" id="email" placeholder="email" [(ngModel)]="email" name="email">
+                <label for="email" class="email">Email</label>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <input type="file" class="form-control" id="customFile" style="color: #a31b0f;min-height: 100%;" (input)="fileChosen($event)" >
+        </div>
+        <div class="col-12" style="display:flex;justify-content:center;">
+            <button type="submit" class="btn btn-primary" (click)="register()">Register</button>
+        </div>
+        <div class="col-12">
+            <br>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="message!=''">
+            <label class="alertmess">{{message}}</label>
+        </div>
+    </form>  
+
+    
+
+  
+      
+  </body>
+  
+
+  

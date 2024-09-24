@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "6509ebc64fe79b4bb2078211"
+  },
+  "id": 0,
+  "name": "pulmologija",
+  "examinations": [
+    {
+      "name": "Spirometrija",
+      "length": 15,
+      "price": 3000,
+      "id": 1
+    },
+    {
+      "name": "Rendgen pluca",
+      "length": 20,
+      "price": 4000,
+      "id": 2
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6509ebcd4fe79b4bb2078217"
+  },
+  "id": 1,
+  "name": "kardiologija",
+  "examinations": [
+    {
+      "name": "Test opterecenja",
+      "length": 60,
+      "price": 5000,
+      "id": 1
+    },
+    {
+      "name": "Angiografija",
+      "length": 90,
+      "price": 4500,
+      "id": 2
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6509ebe84fe79b4bb207821d"
+  },
+  "id": 2,
+  "name": "estetska hirurgija",
+  "examinations": [
+    {
+      "name": "Liposukcija",
+      "length": 60,
+      "price": 10000,
+      "id": 1
+    },
+    {
+      "name": "Hemijski piling",
+      "length": 30,
+      "price": 6000,
+      "id": 2
+    }
+  ]
+}]

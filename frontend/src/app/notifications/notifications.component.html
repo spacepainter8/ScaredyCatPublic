@@ -1,0 +1,52 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="profile" >Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="doctors" >Doctors</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link "   href="examinations">Examinations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="notifications">Notifications</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+  
+  <body>
+    <table class="table table-responsive" style="max-width:80%">
+        <tbody>
+          <tr *ngFor="let n of notifs">
+            <td style="background-color: #a31b0f; color: white; display: flex; justify-content: space-between;" (click)="change(n.id)">
+                <span>{{ n.text }}</span>
+                <span class="dot" *ngIf="n.readByMe==false"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </body>

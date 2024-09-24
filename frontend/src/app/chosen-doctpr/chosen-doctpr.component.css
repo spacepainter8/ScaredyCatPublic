@@ -1,0 +1,168 @@
+body {
+    margin:0;
+    padding:0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d9144;
+    padding-top: 70px;
+}
+
+.btn-primary {
+    background-color: #a31b0f;
+    border-color: #a31b0f;
+    
+}
+.btn-primary:active {
+    background-color: #e73424;
+    border-color: #e73424;
+    
+}
+
+.h3 {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.form-check-label {
+    color: white;
+}
+
+
+.email {
+    color: #a31b0f;
+}
+
+.lozinka {
+    color: #a31b0f;
+}
+
+.navbar {
+    background-color: #a31b0f;
+    border-color: #a31b0f;
+}
+
+.label {
+    color:white;
+    font-size:120%;
+}
+
+.register-div{
+    display: flex;
+    justify-content: center;
+}
+
+.alert-danger {
+    background-color: #FFD700;
+    border: #FFD700;
+}
+
+.alertmess{
+    display:flex;
+    justify-content: center;
+    color: #a31b0f;
+}
+
+.form-check-input[type=radio]:checked{
+    background-color: #a31b0f;
+    border-color: #a31b0f;
+    box-shadow: 0;
+}
+
+.container{
+    color:#0d9144;
+    background-color: #0d9144;
+    
+}
+ 
+.nav{
+    color:#0d9144;
+    background-color: #0d9144;
+    padding: 0%;
+}
+
+
+.d-block{
+    width:100%;
+    height: auto;
+  
+}
+
+select.form-select option:checked {
+    background-color: #a31b0f; 
+    border-color: #a31b0f;
+    color: white; 
+    box-shadow: 0 0 5px #a31b0f; 
+}
+
+select.form-select option:hover {
+    background-color: #a31b0f;
+    border-color: #a31b0f; 
+    color: white; 
+    box-shadow: 0 0 5px #a31b0f; 
+}
+select.form-select option:focus {
+    background-color: #a31b0f;
+    border-color: #a31b0f; 
+    color: white;
+    box-shadow: 0 0 5px #a31b0f; 
+}
+
+input.form-control:focus {
+    box-shadow: 0 0 5px #a31b0f; 
+}
+
+input.form-control::placeholder {
+    color: #a31b0f; 
+}
+
+.select-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .select-placeholder {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a31b0f;
+  }
+  
+  .center-justify {
+    text-align: justify;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calendar {
+    background-color: #a31b0f;
+    color:white;
+    min-width: 80%;
+ }
+ 
+
+
+
+
+
+
+
+
+  

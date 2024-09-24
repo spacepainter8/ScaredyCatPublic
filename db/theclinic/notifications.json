@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "6509f5d23a943f7710c24d40"
+  },
+  "id": 1,
+  "text": "You have an examination on 2023-09-18 at 09:00",
+  "for": [
+    "jovan"
+  ],
+  "type": "Reminder",
+  "read": []
+},{
+  "_id": {
+    "$oid": "6509f5d23a943f7710c24d42"
+  },
+  "id": 2,
+  "text": "You have an examination on 2023-09-17 at 09:00",
+  "for": [
+    "jovan"
+  ],
+  "type": "Reminder",
+  "read": []
+},{
+  "_id": {
+    "$oid": "6509f5d23a943f7710c24d44"
+  },
+  "id": 3,
+  "text": "You have an examination on 2023-09-16 at 08:30",
+  "for": [
+    "jovan"
+  ],
+  "type": "Reminder",
+  "read": []
+},{
+  "_id": {
+    "$oid": "6509f5d23a943f7710c24d46"
+  },
+  "id": 4,
+  "text": "You have an examination on 2023-09-09 at 16:15",
+  "for": [
+    "dusan"
+  ],
+  "type": "Reminder",
+  "read": []
+},{
+  "_id": {
+    "$oid": "6509f5d23a943f7710c24d48"
+  },
+  "id": 5,
+  "text": "You have an examination on 2023-09-02 at 08:45",
+  "for": [
+    "dusan"
+  ],
+  "type": "Reminder",
+  "read": []
+},{
+  "_id": {
+    "$oid": "6509f5d23a943f7710c24d4a"
+  },
+  "id": 6,
+  "text": "You have an examination on 2023-09-08 at 09:45",
+  "for": [
+    "dusan"
+  ],
+  "type": "Reminder",
+  "read": []
+}]

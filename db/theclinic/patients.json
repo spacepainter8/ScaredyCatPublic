@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "6509ea584fe79b4bb20781f7"
+  },
+  "username": "jovan",
+  "password": "JovanJoca8!",
+  "name": "Jovan",
+  "lastname": "Jovanovic",
+  "address": "Milosa Crnjanskog 54",
+  "phone": "0689610379",
+  "email": "jocko@gmail.com",
+  "id": 0,
+  "profilePhoto": "default-avi.png"
+},{
+  "_id": {
+    "$oid": "6509ea5b4fe79b4bb20781fe"
+  },
+  "username": "dusan",
+  "password": "DusanDule8!",
+  "name": "Dusan",
+  "lastname": "Stefanovic",
+  "address": "Despota Stefana 13",
+  "phone": "0680963197",
+  "email": "bs200051d@student.etf.bg.ac.rs",
+  "id": 1,
+  "profilePhoto": "-r1695147984100 - cameraman.jpg"
+}]

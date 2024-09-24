@@ -1,0 +1,120 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="">Home</a>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link " href="doctor" >Profile</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link "   href="drExaminations">Examinations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="misc">Miscellaneous</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+  <body>
+    <div style="max-width:100%">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-floating">
+                    <input type="text" class="form-control wider-input" id="floatingInput" placeholder="New Examination" [(ngModel)]="newExam">
+                    <label for="floatingInput" class="email">New Examination</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="number" class="form-control wider-input" id="floatingInput" placeholder="Length" [(ngModel)]="length">
+                    <label for="floatingInput" class="email">Length</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="number" class="form-control wider-input" id="floatingInput" placeholder="Price" [(ngModel)]="price">
+                    <label for="floatingInput" class="email">Price</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 center-button">
+                <button class="btn btn-primary py-2" type="submit" (click)="request()">Request New Examination</button>
+            </div>
+        </div>
+        <br>
+        <div class="alert alert-danger" role="alert" *ngIf="examMess!=''">
+            <label class="alertmess">{{examMess}}</label>
+          </div>
+    </div>
+    <br>
+    <div class="container-fluid" style="margin-top:10px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-floating">
+                    <input type="date" class="form-control wider-input" id="floatingInput" placeholder="Free Day" [(ngModel)]="freeDay">
+                    <label for="floatingInput" class="email">Free Day</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 center-button">
+                <button class="btn btn-primary py-2" type="submit" (click)="free()">Request Free Day</button>
+            </div>
+        </div>
+        <br>
+        <div class="alert alert-danger" role="alert" *ngIf="fdMess!=''">
+            <label class="alertmess">{{fdMess}}</label>
+          </div>
+    </div>
+    <br>
+    <div class="container-fluid" style="margin-top:10px">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="date" class="form-control wider-input" id="floatingInput" placeholder="Vacation Start" [(ngModel)]="startVac">
+                    <label for="floatingInput" class="email">Vacation Start</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="date" class="form-control wider-input" id="floatingInput" placeholder="Vacation End" [(ngModel)]="endVac">
+                    <label for="floatingInput" class="email">Vacation End</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 center-button">
+                <button class="btn btn-primary py-2" type="submit" (click)="vacation()">Request Vacation</button>
+            </div>
+        </div>
+        <br>
+        <div class="alert alert-danger" role="alert" *ngIf="vacMess!=''">
+            <label class="alertmess">{{vacMess}}</label>
+          </div>
+    </div>
+</div>
+  </body>

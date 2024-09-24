@@ -1,0 +1,191 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="manager">Users</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active"  href="other">Other</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+  <body>
+    <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">
+        Examination Requests
+    </button>
+      <div class="container table-responsive collapse" id="collapseA">
+            <table class="table table-striped table-borderless table-responsive" *ngIf="examinationRequests.length != 0">
+              <thead  >
+                <tr>
+                  <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Specialty</th>
+                  <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Name</th>
+                  <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Length</th>
+                  <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Price</th>
+                  <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;"></th>
+                  <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let er of examinationRequests">
+                  <td style="background-color: #a31b0f;color: white;">{{er.specialty}}</td>
+                  <td style="background-color: #a31b0f;color: white;">{{er.examination}}</td>
+                  <td style="background-color: #a31b0f;color: white;">{{er.length}}</td>
+                  <td style="background-color: #a31b0f;color: white;">{{er.price}}</td>
+                  <td style="background-color: #a31b0f;color: white;" >
+                    <button type="button" class="btn btn-primary" style="background-color: #0d9144;color: white;min-width: 100%;min-height: 100%;" (click)="accept(er.id)">Accept</button>
+                  </td>
+                  <td style="background-color: #a31b0f;color: white;" >
+                    <button  type="button" class="btn btn-primary" style="background-color: #0d9144;color: white;min-width: 100%;min-height: 100%;" (click)="deny(er.id)">Deny</button>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+     
+        <div class="card card-body" *ngIf="examinationRequests.length == 0" style="background-color: #a31b0f;color: white;margin-bottom: 10px;border-color: #a31b0f;">
+            There are no examination requests
+        </div>
+    </div>
+
+
+    <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseB" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">
+        Specalties
+    </button>
+      <div class="container table-responsive collapse" id="collapseB">
+       
+        <form class="row g-3">
+            <div class="col-md-8">
+        <div class="form-floating ">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Specialty Name" [(ngModel)]="specialty" name="name">
+            <label for="floatingInput" class="email">Specialty Name</label>
+        </div>
+            </div>
+            <div class="col-md-4">
+        <button  type="button" class="btn btn-primary" style="background-color: #0d9144;color: white;min-width: 100%;min-height: 100%;" (click)="newSpecialty()">Add new specialty</button>
+            </div>
+            
+
+            
+
+
+            <div class="col-md-12" style="margin-top:30px">
+                <select class="form-select"  style="color: #a31b0f;" [(ngModel)]="specID" name="nzm" id="nzm" (change)="getSpec()" on>
+                    <option *ngFor="let s of specialties" value="{{s.id}}">{{s.name}}</option>    
+                </select>
+            </div>
+          
+                <div class="col-md-3" *ngIf = "chosenSpec!=null">
+                    <div class="form-floating " >
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Name" [(ngModel)]="examName" name="examName">
+                        <label for="floatingInput" class="email">Examination Name</label>
+                    </div>
+                </div>
+                
+                <div class="col-md-3" *ngIf = "chosenSpec!=null">
+                    <div class="form-floating ">
+                        <input type="number" class="form-control" id="floatingInputA" placeholder="Length" [(ngModel)]="length" name="length">
+                        <label for="floatingInputA" class="email">Length</label>
+                    </div>
+                </div>
+                
+                <div class="col-md-3" *ngIf = "chosenSpec!=null">
+                    <div class="form-floating ">
+                        <input type="number" class="form-control" id="floatingInputB" placeholder="Price" [(ngModel)]="price" name="price">
+                        <label for="floatingInputB" class="email">Price</label>
+                    </div>
+                </div>
+                
+                <div class="col-md-3" *ngIf = "chosenSpec!=null">
+                    <button  type="button" class="btn btn-primary" style="background-color: #0d9144;color: white;min-width: 100%;min-height: 100%;" (click)="newExam()">Add new examination</button>
+        
+                </div>
+
+
+
+                <div class="col-md-3" >
+                    <select class="form-select"  style="color: #a31b0f;"  name="aaa" id="aaa" *ngIf = "chosenSpec!=null" [(ngModel)]="chosenExam" (change)="getExam()">
+                        <option *ngFor="let e of chosenSpec.examinations" value="{{e.id}}" >{{e.name}}</option>    
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-floating " *ngIf="exam!=null">
+                        <input type="number" class="form-control" id="floatingInput9" placeholder="Price" [(ngModel)]="updatePrice" name="updatePrice">
+                        <label for="floatingInput9" class="email">{{exam.price}} RSD</label>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-floating" *ngIf="exam!=null">
+                        <input type="number" class="form-control" id="floatingInput10" placeholder="Length" [(ngModel)]="updateLength" name="updateLength">
+                        <label for="floatingInput10" class="email">{{exam.length}} MIN</label>
+                    </div>
+                </div>
+
+                <div class="col-md-3" *ngIf="exam!=null">
+                    <button  type="button" class="btn btn-primary" style="background-color: #0d9144;color: white;min-width: 100%;min-height: 100%;" (click)="updateExam()">Update examination</button>
+        
+                </div>
+
+
+
+                <div class="col-md-8" >
+                  <select class="form-select"  style="color: #a31b0f;"  name="bbb" id="bbb" *ngIf = "chosenSpec!=null" [(ngModel)]="chosenExamDelete" (change)="getExamDelete()">
+                      <option *ngFor="let e of chosenSpec.examinations" value="{{e.id}}" >{{e.name}} - {{e.price}} rsd, {{e.length}} min</option>    
+                  </select>
+              </div>
+
+              <div class="col-md-4" *ngIf="examDelete!=null">
+                <button  type="button" class="btn btn-primary" style="background-color: #0d9144;color: white;min-width: 100%;min-height: 100%;" (click)="deleteExam()">Delete examination</button>
+    
+            </div>
+            
+         </form>
+
+     
+
+
+
+    </div>
+
+
+    <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapsable" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">
+      News and Promotions
+  </button>
+    <div class="container table-responsive collapse" id="collapsable">
+      <form class="row g-3">
+      <div class="col-md-8">
+        <div class="form-floating ">
+            <input type="text" class="form-control" id="promo" placeholder="Type promotion here"  name="promo" [(ngModel)]="promotion">
+            <label for="promo" class="email">Type promotion here</label>
+        </div>
+            </div>
+            <div class="col-md-4">
+        <button  type="button" class="btn btn-primary" style="background-color: #0d9144;color: white;min-width: 100%;min-height: 100%;" (click)="confirmPromotion()">Confirm</button>
+            </div>
+            </form>
+    </div>
+
+
+  </body>

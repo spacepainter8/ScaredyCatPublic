@@ -1,0 +1,81 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="doctor" >Profile</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link "   href="drExaminations">Examinations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="misc">Miscellaneous</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+  <body>
+    <form class="row g-3">
+        <div class="col-12">
+            <h1 class="h3 mb-3 fw-normal">Input report</h1>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Symptoms" [(ngModel)]="symptoms">
+                <label for="username" class="email">Symptoms</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Diagnosis"  name="pass" [(ngModel)]="diagnosis">
+                <label for="floatingPassword" class="lozinka">Diagnosis</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="umm" placeholder="Therapy"  name="passAgain" [(ngModel)]="therapy">
+                <label for="umm" class="lozinka">Therapy</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="date" class="form-control" id="name" placeholder="Next Examination"  name="name" [(ngModel)]="next">
+                <label for="name" class="email">Next Examination</label>
+            </div>
+        </div>
+        
+
+        <div class="col-12" style="display:flex;justify-content:center;margin-bottom: 20px;">
+            <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+        </div>
+       
+       
+    <div class="col-12">
+        <div class="alert alert-danger" role="alert" *ngIf="message!=''">
+            <label class="alertmess">{{message}}</label>
+        </div>
+    </div>
+    </form>  
+  </body>
+  

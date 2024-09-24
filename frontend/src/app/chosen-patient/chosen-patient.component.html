@@ -1,0 +1,111 @@
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="doctor" >Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link "   href="drExaminations">Examinations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="misc">Miscellaneous</a>
+            </li>
+            
+          </ul>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+</header>
+
+  <body>
+    <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAB" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">
+        Reports
+       </button>
+       
+    
+       <div class="container table-responsive collapse" id="collapseAB" >
+        <table class="table table-striped table-borderless table-responsive" *ngIf="myReports.length != 0"   #content>
+          <thead >
+            <tr>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Date</th>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Time</th>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Doctor</th>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Specialty</th>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Symptoms</th>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Diagnosis</th>            
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Therapy</th>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Next examination</th>
+              
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let r of myReports" >
+              <td style="background-color: #a31b0f;color: white;">{{r.date}}</td>
+              <td style="background-color: #a31b0f;color: white;">{{r.time}}</td>
+              <td style="background-color: #a31b0f;color: white;">{{r.doctorName}} {{r.doctorLastname}}</td>
+              <td style="background-color: #a31b0f;color: white;">{{r.doctorSpecialty}}</td>
+              <td style="background-color: #a31b0f;color: white;">{{r.symptoms}}</td>
+              <td style="background-color: #a31b0f;color: white;">{{r.diagnosis}}</td>
+              <td style="background-color: #a31b0f;color: white;">{{r.therapy}}</td>
+              <td style="background-color: #a31b0f;color: white;">{{r.nextExamination}}</td>
+             
+            </tr>
+          </tbody>
+        </table>
+        <div class="card card-body" *ngIf="myReports.length == 0" style="background-color: #a31b0f;color: white;margin-bottom: 10px;border-color: #a31b0f;">
+        There are no reports for this patient.
+    </div>
+    </div>
+
+    <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">
+     Past or current examinations
+  </button>
+    <div class="container table-responsive collapse" id="collapse">
+          <table class="table table-striped table-borderless table-responsive" *ngIf="pastExaminations.length != 0">
+            <thead>
+              <tr>
+                <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Examination</th>
+                <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Date</th>
+                <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Time</th>
+                <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let e of pastExaminations">
+                <td style="background-color: #a31b0f;color: white;" *ngIf="e.report==-1 || e.report==null">{{e.examName}}</td>
+                <td style="background-color: #a31b0f;color: white;" *ngIf="e.report==-1 || e.report==null">{{e.date}}</td>
+                <td style="background-color: #a31b0f;color: white;" *ngIf="e.report==-1 || e.report==null">{{e.time}}</td>
+                <td style="background-color: #a31b0f;color: white;" *ngIf="e.report==-1 || e.report==null">
+                  <button  type="button" class="btn btn-primary" style="background-color: #0d9144;color: white;" (click)="report(e.id)">Report</button>
+                </td>
+            </tr>
+            </tbody>
+          </table>
+   
+      <div class="card card-body" *ngIf="pastExaminations.length == 0" style="background-color: #a31b0f;color: white;margin-bottom: 10px;border-color: #a31b0f;">
+          You have had no examinations with this patient.
+      </div>
+      </div>
+    
+
+      
+  </body>
+  

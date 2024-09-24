@@ -1,0 +1,234 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<header *ngIf = "loggedIn==null">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item" *ngIf = "loggedIn==null">
+                <a class="nav-link"  href="login">Log in</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="register" *ngIf = "loggedIn==null">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="forgottenPassword" *ngIf = "loggedIn==null">Forgotten Password</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>
+
+<header *ngIf = "type=='patient'">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="profile" aria-current="page">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="doctors">Doctors</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link "   href="examinations">Examinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="notifications">Notifications</a>
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<header *ngIf = "type=='doctor'">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="doctor" >Profile</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link "   href="drExaminations">Examinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="misc">Miscellaneous</a>
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<header *ngIf = "type=='manager'">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="manager">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "  href="other">Other</a>
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+  
+    <div id="carouselExample" class="carousel slide" style="max-width:100%;">
+        <div class="carousel-inner">
+          <div class="carousel-item active ">
+            <img src="assets/image1.jpg" class="d-block" >
+          </div>
+          <div class="carousel-item">
+            <img src="assets/image2.jpg" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/image3.jpg" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/image4.jpg" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/image5.jpg" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#a31b0f;background-color: #a31b0f;"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" >
+          <span class="carousel-control-next-icon" aria-hidden="true" style="color:#0d9144;background-color: #0d9144;"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <body>
+        <div class="container my-5">
+          <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="col-12 p-3 p-lg-5 pt-lg-3">
+              <h1 class="display-4 fw-bold lh-1 center-justify" style="color:#a31b0f;">
+                Welcome to the Clinic! Our incredible team of doctors and nurses, equipped with state-of-the-art medical equipment, are always available to carry out whatever medical treatment is needed. Find us at Hospital St. 8
+              </h1>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            
+            <div class="col-md-auto d-flex align-items-center"> 
+              <div class="col-md-auto d-flex align-items-center">
+                <div class="select-container">
+                  <div class="select-placeholder" *ngIf = "sortOption==''">Select an option</div>
+                  <select class="form-select"  style="color: #a31b0f;" [(ngModel)]="sortOption">
+                    <option value="NA">Name - ascending</option>
+                    <option value="ND">Name - descending</option>
+                    <option value="LA">Lastname - ascending</option>
+                    <option value="LD">Lastname - descending</option>
+                    <option value="SA">Specialty - ascending</option>
+                    <option value="SD">Specialty - descending</option>
+                  </select>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-md-auto d-flex align-items-center"> 
+              <button type="button" class="btn btn-warning" style="background-color: #a31b0f; border-color: #a31b0f; color: white; width: 150px;" (click)="sort()">Sort</button>
+            </div>
+            <div class="col-md-auto d-flex align-items-center"> 
+              <div style="margin-right:10px;">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Name" style="color: #a31b0f;" [(ngModel)]="name">
+              </div>
+              <div style="margin-right:10px;">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Lastname" style="color: #a31b0f;" [(ngModel)]="lastname">
+              </div>
+              <div style="margin-right:10px;">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Specialty" style="color: #a31b0f;" [(ngModel)]="specialty">
+              </div>
+            </div>
+            <div class="col-md-auto d-flex align-items-center"> 
+              <button type="button" class="btn btn-warning" style="background-color: #a31b0f; border-color: #a31b0f; color: white; width: 150px;" (click)="search()">Search</button>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        
+
+        
+       
+
+        <br>
+        <div class="row" style="margin-right: 15px; margin-left: 15px; display: flex;flex-wrap: wrap; align-items: center;">
+          <div class="col" *ngFor="let d of allDoctors" style="margin-right: 15px; margin-left: 15px; display: flex; justify-content: center; align-items: center;">
+            <div class="text-center">
+              <img [src]="d.profilePhoto" alt="Doctor Photo"  class="img-fluid" style="min-height: 300px; min-width: 300px;">
+              <h2 style="color: white;">{{d.name}} {{d.lastname}}</h2>
+              <p style="color: white; font-size: 150%;">{{d.specialty}}</p>
+            </div>
+          </div>
+        </div>
+        
+
+        
+      
+      </body>
+
+      
+  

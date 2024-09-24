@@ -1,0 +1,69 @@
+[{
+  "_id": {
+    "$oid": "6509f7003a943f7710c24d5e"
+  },
+  "id": 0,
+  "doctor": "pera",
+  "patient": "jovan",
+  "date": "2023-09-17",
+  "time": "09:00",
+  "doctorName": "Petar",
+  "doctorLastname": "Petrovic",
+  "doctorSpecialty": "pulmologija",
+  "symptoms": "Poteskoce sa disanjem",
+  "diagnosis": "Astma",
+  "therapy": "Lek za astmu",
+  "nextExamination": "2023-09-22",
+  "examId": 3
+},{
+  "_id": {
+    "$oid": "6509f8213a943f7710c24d72"
+  },
+  "id": 1,
+  "doctor": "marina",
+  "patient": "jovan",
+  "date": "2023-09-18",
+  "time": "09:00",
+  "doctorName": "Marina",
+  "doctorLastname": "Martinovic",
+  "doctorSpecialty": "kardiologija",
+  "symptoms": "Bol",
+  "diagnosis": "Angina pektoris",
+  "therapy": "Cardiopirin ",
+  "nextExamination": "2023-09-30",
+  "examId": 2
+},{
+  "_id": {
+    "$oid": "6509fa413a943f7710c24dac"
+  },
+  "id": 2,
+  "doctor": "lana",
+  "patient": "dusan",
+  "date": "2023-09-09",
+  "time": "16:15",
+  "doctorName": "Lana",
+  "doctorLastname": "Rejovic",
+  "doctorSpecialty": "estetska hirurgija",
+  "symptoms": "Prekomerna tezina",
+  "diagnosis": "/",
+  "therapy": "Liposukcija",
+  "nextExamination": "2023-10-17",
+  "examId": 6
+},{
+  "_id": {
+    "$oid": "6509fc033a943f7710c24dd2"
+  },
+  "id": 3,
+  "doctor": "marina",
+  "patient": "dusan",
+  "date": "2023-09-02",
+  "time": "08:45",
+  "doctorName": "Marina",
+  "doctorLastname": "Martinovic",
+  "doctorSpecialty": "kardiologija",
+  "symptoms": "Aritmija",
+  "diagnosis": "Dijagnoza",
+  "therapy": "Terapija",
+  "nextExamination": "2023-11-17",
+  "examId": 7
+}]

@@ -1,0 +1,122 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="profile" aria-current="page">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="doctors">Doctors</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link "   href="examinations">Examinations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="notifications">Notifications</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+
+  <body>
+    
+    <div class="container table-responsive d-flex justify-content-center align-items-center" >
+      <div class="row table-responsive ">
+        <div class="col-md-6 table-responsive ">
+          <img src="{{loggedIn.profilePhoto}}" class="img-fluid">
+        </div>
+
+        
+
+        <div class="table-responsive col-md-6 align-self-center">
+          <div class="container table-responsive">
+          <table class="table-responsive table table-borderless " style="background-color: #0d9144;">
+            <tbody>
+              <tr>
+                <th scope="row" style="background-color: #0d9144; color:#a31b0f">Name</th>
+                <td *ngIf = "primary==true" style="background-color: #0d9144; color:white">{{loggedIn.name}}</td>
+                <td *ngIf = "primary==false" style="background-color: #0d9144;color: #0d9144;">
+                  <input  [(ngModel)]="name" id="name" type="text" class="form-control" placeholder="{{loggedIn.name}}" style="color:#a31b0f">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" style="background-color: #0d9144;color:#a31b0f">Lastname</th>
+                <td *ngIf = "primary==true" style="background-color: #0d9144;color:white">{{loggedIn.lastname}}</td>
+                <td *ngIf = "primary==false" style="background-color: #0d9144;color: #0d9144;">
+                  <input type="text" id="lastname" [(ngModel)]="lastname" class="form-control" placeholder="{{loggedIn.lastname}}">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" style="background-color: #0d9144;color:#a31b0f">Address</th>
+                <td *ngIf = "primary==true" style="background-color: #0d9144;color:white" >{{loggedIn.address}}</td>
+                <td *ngIf = "primary==false" style="background-color: #0d9144;color: #0d9144;">
+                  <input type="text" id="address" [(ngModel)]="address" class="form-control" placeholder="{{loggedIn.address}}">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" style="background-color: #0d9144;color:#a31b0f">Email</th>
+                <td *ngIf = "primary==true" style="background-color: #0d9144;color:white">{{loggedIn.email}}</td>
+                <td *ngIf = "primary==false" style="background-color: #0d9144;color: #0d9144;">
+                  <input type="text"   [(ngModel)]="email" class="form-control" placeholder="{{loggedIn.email}}">
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" style="background-color: #0d9144;color:#a31b0f">Phone</th>
+                <td *ngIf = "primary==true" style="background-color: #0d9144;color:white">{{loggedIn.phone}}</td>
+                <td *ngIf = "primary==false" style="background-color: #0d9144;color: #0d9144;">
+                  <input type="text"  [(ngModel)]="phone" class="form-control" placeholder="{{loggedIn.phone}}">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="background-color: #0d9144;">
+                  <input *ngIf = "primary==false" type="file" class="form-control" id="customFile" style="color: #a31b0f;min-height: 100%;" (input)="fileChosen($event)">
+                
+                </td>
+                
+              </tr>
+              <tr>
+                <td colspan="2" style="background-color: #0d9144;">
+                  <button *ngIf = "primary==true" aria-colspan="2" type="button" class="btn btn-primary" style="background-color: #a31b0f;color: white;min-width: 100%;min-height: 100%;" (click)="change()">Update</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <button *ngIf = "primary==false" aria-colspan="2" type="button" class="btn btn-primary" style="background-color: #a31b0f;color: white;min-width: 100%;min-height: 100%;" (click)="save()">Save</button>
+          <br><br>
+          <div class="alert alert-danger" role="alert" *ngIf="message!=''">
+            <label class="alertmess">{{message}}</label>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+    
+    
+      
+  </body>
+  
+
+  

@@ -1,0 +1,205 @@
+[{
+  "_id": {
+    "$oid": "6509efb64fe79b4bb2078260"
+  },
+  "id": 0,
+  "doctor": "pera",
+  "idOfExam": 1,
+  "examName": "Spirometrija",
+  "patient": "jovan",
+  "date": "2023-09-25",
+  "time": "09:00",
+  "length": 15,
+  "notified": "false",
+  "report": -1,
+  "department": "Vracar",
+  "doctorName": "Petar",
+  "doctorLastname": "Petrovic"
+},{
+  "_id": {
+    "$oid": "6509efd14fe79b4bb207826c"
+  },
+  "id": 1,
+  "doctor": "marina",
+  "idOfExam": 2,
+  "examName": "Angiografija",
+  "patient": "jovan",
+  "date": "2023-09-28",
+  "time": "09:00",
+  "length": 90,
+  "notified": "false",
+  "report": -1,
+  "department": "Novi Beograd",
+  "doctorName": "Marina",
+  "doctorLastname": "Martinovic"
+},{
+  "_id": {
+    "$oid": "6509f03bb53bf1b8e8c30e56"
+  },
+  "id": 2,
+  "doctor": "marina",
+  "idOfExam": 2,
+  "examName": "Angiografija",
+  "patient": "jovan",
+  "date": "2023-09-18",
+  "time": "09:00",
+  "length": 90,
+  "notified": "true",
+  "report": 1,
+  "department": "Novi Beograd",
+  "doctorName": "Marina",
+  "doctorLastname": "Martinovic"
+},{
+  "_id": {
+    "$oid": "6509f063b53bf1b8e8c30e57"
+  },
+  "id": 3,
+  "doctor": "pera",
+  "idOfExam": 1,
+  "examName": "Spirometrija",
+  "patient": "jovan",
+  "date": "2023-09-17",
+  "time": "09:00",
+  "length": 15,
+  "notified": "true",
+  "report": 0,
+  "department": "Vracar",
+  "doctorName": "Petar",
+  "doctorLastname": "Petrovic"
+},{
+  "_id": {
+    "$oid": "6509f0c04fe79b4bb2078278"
+  },
+  "id": 4,
+  "doctor": "lana",
+  "idOfExam": 2,
+  "examName": "Hemijski piling",
+  "patient": "jovan",
+  "date": "2023-09-16",
+  "time": "08:30",
+  "length": 30,
+  "notified": "true",
+  "report": -1,
+  "department": "Vracar",
+  "doctorName": "Lana",
+  "doctorLastname": "Rejovic"
+},{
+  "_id": {
+    "$oid": "6509f2c64fe79b4bb2078288"
+  },
+  "id": 5,
+  "doctor": "lana",
+  "idOfExam": 1,
+  "examName": "Liposukcija",
+  "patient": "dusan",
+  "date": "2023-09-28",
+  "time": "16:15",
+  "length": 60,
+  "notified": "false",
+  "report": -1,
+  "department": "Vracar",
+  "doctorName": "Lana",
+  "doctorLastname": "Rejovic"
+},{
+  "_id": {
+    "$oid": "6509f353b53bf1b8e8c30e64"
+  },
+  "id": 6,
+  "doctor": "lana",
+  "idOfExam": 1,
+  "examName": "Liposukcija",
+  "patient": "dusan",
+  "date": "2023-09-09",
+  "time": "16:15",
+  "length": 60,
+  "notified": "true",
+  "report": 2,
+  "department": "Vracar",
+  "doctorName": "Lana",
+  "doctorLastname": "Rejovic"
+},{
+  "_id": {
+    "$oid": "6509f3e34fe79b4bb2078294"
+  },
+  "id": 7,
+  "doctor": "marina",
+  "idOfExam": 1,
+  "examName": "Test opterecenja",
+  "patient": "dusan",
+  "date": "2023-09-02",
+  "time": "08:45",
+  "length": 60,
+  "notified": "true",
+  "report": 4,
+  "department": "Novi Beograd",
+  "doctorName": "Marina",
+  "doctorLastname": "Martinovic"
+},{
+  "_id": {
+    "$oid": "6509f4784fe79b4bb20782a3"
+  },
+  "id": 8,
+  "doctor": "pera",
+  "idOfExam": 2,
+  "examName": "Rendgen pluca",
+  "patient": "dusan",
+  "date": "2023-09-08",
+  "time": "09:45",
+  "length": 20,
+  "notified": "true",
+  "report": -1,
+  "department": "Vracar",
+  "doctorName": "Petar",
+  "doctorLastname": "Petrovic"
+},{
+  "_id": {
+    "$oid": "6509fa883a943f7710c24dbd"
+  },
+  "id": 9,
+  "doctor": "marina",
+  "idOfExam": 1,
+  "examName": "Test opterecenja",
+  "patient": "dusan",
+  "date": "2023-09-24",
+  "time": "08:30",
+  "length": 60,
+  "notified": "false",
+  "report": -1,
+  "department": "Novi Beograd",
+  "doctorName": "Marina",
+  "doctorLastname": "Martinovic"
+},{
+  "_id": {
+    "$oid": "6509fc6b3a943f7710c24ded"
+  },
+  "id": 10,
+  "doctor": "pera",
+  "idOfExam": 2,
+  "examName": "Rendgen pluca",
+  "patient": "dusan",
+  "date": "2023-09-25",
+  "time": "17:00",
+  "length": 20,
+  "notified": "false",
+  "report": -1,
+  "department": "Vracar",
+  "doctorName": "Petar",
+  "doctorLastname": "Petrovic"
+},{
+  "_id": {
+    "$oid": "6509fcc23a943f7710c24e02"
+  },
+  "id": 11,
+  "doctor": "lana",
+  "idOfExam": 2,
+  "examName": "Hemijski piling",
+  "patient": "jovan",
+  "date": "2023-09-25",
+  "time": "16:00",
+  "length": 30,
+  "notified": "false",
+  "report": -1,
+  "department": "Vracar",
+  "doctorName": "Lana",
+  "doctorLastname": "Rejovic"
+}]

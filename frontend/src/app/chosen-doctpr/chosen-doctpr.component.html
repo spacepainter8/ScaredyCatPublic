@@ -1,0 +1,144 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="profile" >Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="doctors" >Doctors</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link "   href="examinations">Examinations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="notifications">Notifications</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+  
+
+  <body>
+    
+    <img src="{{chosenDoctor.profilePhoto}}"  class="img-fluid">
+    <br>
+    <div class="form-control rounded-pill" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">{{chosenDoctor.name}} {{chosenDoctor.lastname}}</div>
+    <div class="form-control rounded-pill" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">{{chosenDoctor.specialty}}</div>
+    <div class="form-control rounded-pill" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">{{chosenDoctor.department}}</div>
+    <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">
+        Examinations
+    </button>
+   
+    
+      <div class="container table-responsive collapse" id="collapse">
+        <table class="table table-striped table-borderless table-responsive" *ngIf="chosenDoctor.examinations.length != 0">
+          <thead  >
+            <tr>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Name</th>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Length</th>
+              <th scope="col" style="background-color: #a31b0f;color: white; border-bottom: 1px solid white;">Price</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let e of chosenDoctor.examinations">
+              <td style="background-color: #a31b0f;color: white;">{{e.name}}</td>
+              <td style="background-color: #a31b0f;color: white;">{{e.length}} min</td>
+              <td style="background-color: #a31b0f;color: white;">{{e.price}} rsd</td>
+          </tr>
+          </tbody>
+        </table>
+ 
+    <div class="card card-body" *ngIf="chosenDoctor.examinations.length == 0" style="background-color: #a31b0f;color: white;margin-bottom: 10px;border-color: #a31b0f;">
+        There are no examinations for this doctor
+    </div>
+</div>
+
+    
+
+
+
+     
+ 
+    <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" style="width:25%;display: flex;justify-content: center;background-color:#a31b0f;color:white;border-color: #a31b0f;margin-bottom:10px">
+      Schedule an examination
+   </button>
+    <div class="collapse" id="collapseA">
+      <div class="card card-body" style="background-color: #a31b0f;color: white;margin-bottom: 10px;" *ngIf="chosenDoctor.examinations.length!=0">
+        <form class="row g-3">
+          <div class="col-12">
+                <select class="form-select"  style="color: #a31b0f;" [(ngModel)]="chosenExam" name="name" id="name">
+                  <option *ngFor="let e of chosenDoctor.examinations" value="{{e.id}}">{{e.name}}</option>
+                </select>
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" type="date" style="color: #a31b0f;" [(ngModel)]="date" name="date">
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" type="time" style="color: #a31b0f;" [(ngModel)]="time" name="time">
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary w-100 py-2 rounded-pill" type="submit" style="background-color:#0d9144;" (click)="schedule()">Schedule</button>
+          </div>
+        </form>
+      </div>
+      <div class="card card-body" style="background-color: #a31b0f;color: white;margin-bottom: 10px;" *ngIf="chosenDoctor.examinations.length==0">
+        There are currently no examinations available for this doctor.
+      </div>
+    </div>
+
+
+    <div class="alert alert-danger" role="alert" *ngIf="message!=''">
+      <label class="alertmess">{{message}}</label>
+    </div>
+    
+    
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <full-calendar [options]="calendarOptions" class="calendar"></full-calendar>
+        </div>
+        <div class="col-md-4">
+          <ngb-datepicker #datepicker style="background-color:#a31b0f;color:white;" (dateSelect)="onDateSelect($event)"></ngb-datepicker>
+          <br>
+          <br>
+          <div *ngIf="viewForm==true">
+            <select class="form-select"  style="color: #a31b0f;" [(ngModel)]="chosenExam" name="name" id="name">
+              <option *ngFor="let e of chosenDoctor.examinations" value="{{e.id}}">{{e.name}}</option>
+            </select>
+            <br>
+            <button class="btn btn-primary w-100 py-2 rounded-pill" type="submit" style="background-color:#a31b0f;text-align: center;" (click)="schedule()">Schedule</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+  
+
+  

@@ -1,0 +1,97 @@
+[{
+  "_id": {
+    "$oid": "6509d08d4fe79b4bb207814e"
+  },
+  "username": "pera",
+  "password": "peraDetlic8!",
+  "name": "Petar",
+  "lastname": "Petrovic",
+  "address": "Ulica borova br. 15",
+  "phone": "0691697831",
+  "email": "detlicevopero@yahoo.com",
+  "licence": 1564,
+  "id": 0,
+  "profilePhoto": "-r1695142029876 - download.jpg",
+  "specialty": "pulmologija",
+  "department": "Vracar",
+  "examinations": [
+    {
+      "name": "Spirometrija",
+      "length": 15,
+      "price": 3000,
+      "id": 1,
+      "chosen": null
+    },
+    {
+      "name": "Rendgen pluca",
+      "length": 20,
+      "price": 4000,
+      "id": 2,
+      "chosen": null
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6509d49d4fe79b4bb207815a"
+  },
+  "username": "marina",
+  "password": "Marina8!",
+  "name": "Marina",
+  "lastname": "Martinovic",
+  "address": "Ulica Ive Andrica 8",
+  "phone": "0631670619",
+  "email": "marina@gmail.com",
+  "licence": 19389,
+  "id": 1,
+  "profilePhoto": "-r1695143069480 - red-fox-300x300.jpg",
+  "specialty": "kardiologija",
+  "department": "Novi Beograd",
+  "examinations": [
+    {
+      "name": "Test opterecenja",
+      "length": 60,
+      "price": 5000,
+      "id": 1,
+      "chosen": null
+    },
+    {
+      "name": "Angiografija",
+      "length": 90,
+      "price": 4500,
+      "id": 2,
+      "chosen": null
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6509d6824fe79b4bb2078164"
+  },
+  "username": "lana",
+  "password": "LanaRej8!",
+  "name": "Lana",
+  "lastname": "Rejovic",
+  "address": "Ljubicasta ulica br. 8",
+  "phone": "0679631560",
+  "email": "lanab2d@paradise.rs",
+  "licence": 1562,
+  "id": 2,
+  "profilePhoto": "default-avi.png",
+  "specialty": "estetska hirurgija",
+  "department": "Vracar",
+  "examinations": [
+    {
+      "name": "Liposukcija",
+      "length": 60,
+      "price": 10000,
+      "id": 1,
+      "chosen": null
+    },
+    {
+      "name": "Hemijski piling",
+      "length": 30,
+      "price": 6000,
+      "id": 2,
+      "chosen": null
+    }
+  ]
+}]

@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "6509e09b4fe79b4bb20781cf"
+  },
+  "id": 0,
+  "username": "jovan",
+  "password": "JovanJoca8!",
+  "name": "Jovan",
+  "lastname": "Jovanovic",
+  "address": "Milosa Crnjanskog 54",
+  "phone": "0689610379",
+  "email": "jocko@gmail.com",
+  "profilePhoto": "default-avi.png",
+  "status": "Accepted"
+},{
+  "_id": {
+    "$oid": "6509e7d04fe79b4bb20781db"
+  },
+  "id": 1,
+  "username": "dusan",
+  "password": "DusanDule8!",
+  "name": "Dusan",
+  "lastname": "Stefanovic",
+  "address": "Despota Stefana 13",
+  "phone": "0680963197",
+  "email": "bs200051d@student.etf.bg.ac.rs",
+  "profilePhoto": "-r1695147984100 - cameraman.jpg",
+  "status": "Accepted"
+},{
+  "_id": {
+    "$oid": "6509e9434fe79b4bb20781e5"
+  },
+  "id": 2,
+  "username": "ana",
+  "password": "Anastasija8!",
+  "name": "Anastasija",
+  "lastname": "Lazarevic",
+  "address": "Ulica br. 8",
+  "phone": "0681369789",
+  "email": "ana@gmail.com",
+  "profilePhoto": "default-avi.png",
+  "status": "Denied"
+},{
+  "_id": {
+    "$oid": "6509ea094fe79b4bb20781ef"
+  },
+  "id": 3,
+  "username": "vanja",
+  "password": "VanjaVanja8!",
+  "name": "Vanja",
+  "lastname": "Jovanovic",
+  "address": "Omladinska br. 99",
+  "phone": "0697610349",
+  "email": "vanjajov@gmail.com",
+  "profilePhoto": "-r1695148553632 - image_caption_coco_2017--22.jpg",
+  "status": "Pending"
+}]

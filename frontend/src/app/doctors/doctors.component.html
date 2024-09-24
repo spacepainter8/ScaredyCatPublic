@@ -1,0 +1,117 @@
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="profile" aria-current="page">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="doctors" aria-current="page">Doctors</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link "   href="examinations">Examinations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="notifications">Notifications</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home" (click)="logout()">Log out</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+  
+
+  <body>
+    
+      
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          
+          <div class="col-md-auto d-flex align-items-center"> 
+            <div class="col-md-auto d-flex align-items-center">
+              <div class="select-container">
+                <div class="select-placeholder" *ngIf = "sortOption==''">Select an option</div>
+                <select class="form-select"  style="color: #a31b0f;" [(ngModel)]="sortOption">
+                  <option value="NA">Name - ascending</option>
+                  <option value="ND">Name - descending</option>
+                  <option value="LA">Lastname - ascending</option>
+                  <option value="LD">Lastname - descending</option>
+                  <option value="SA">Specialty - ascending</option>
+                  <option value="SD">Specialty - descending</option>
+                  <option value="DA">Department - ascending</option>
+                  <option value="DD">Department - descending</option>
+                </select>
+              </div>
+            </div>
+            
+          </div>
+          <div class="col-md-auto d-flex align-items-center"> 
+            <button type="button" class="btn btn-warning" style="background-color: #a31b0f; border-color: #a31b0f; color: white; width: 150px;" (click)="sort()">Sort</button>
+          </div>
+          <div class="col-md-auto d-flex align-items-center"> 
+            <div style="margin-right:10px;">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Name" style="color: #a31b0f;" [(ngModel)]="name">
+            </div>
+            <div style="margin-right:10px;">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Lastname" style="color: #a31b0f;" [(ngModel)]="lastname">
+            </div>
+            <div style="margin-right:10px;">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Specialty" style="color: #a31b0f;" [(ngModel)]="specialty">
+            </div>
+            <div style="margin-right:10px;">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Department" style="color: #a31b0f;" [(ngModel)]="department">
+              </div>
+          </div>
+          <div class="col-md-auto d-flex align-items-center"> 
+            <button type="button" class="btn btn-warning" style="background-color: #a31b0f; border-color: #a31b0f; color: white; width: 150px;" (click)="search()">Search</button>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+
+      
+     
+
+      <br>
+      <div class="row" style="margin-right: 15px; margin-left: 15px; display: flex;flex-wrap: wrap; align-items: center;">
+        <div class="col" *ngFor="let d of allDoctors" style="margin-right: 15px; margin-left: 15px; display: flex; justify-content: center; align-items: center;">
+          <div class="text-center">
+            <a href="http://localhost:4200/chosenDr" (click)="doctor(d.username)"><div class="max-width-300"><img [src]="d.profilePhoto" alt="Doctor Photo"  class="img-fluid" style="min-width: 300px;min-height: 300px;"  ></div></a>
+            <h2 style="color: white;">{{d.name}} {{d.lastname}}</h2>
+            <p style="color: white; font-size: 150%;">{{d.specialty}}</p>
+            <p style="color: white; font-size: 150%;margin-top:-10px">{{d.department}}</p>
+        </div>
+        </div>
+      </div>
+      
+
+    
+    
+    
+      
+  </body>
+  
+
+  
